@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launch4jConfig>
+	<dontWrapJar>false</dontWrapJar>
+	<headerType>gui</headerType>
+
+	<jar>C:\Development\Projects\EncaptureMD\mirth\emd_mirth\branches\3.0.0dev\server\setup\mirth-manager-launcher.jar</jar>
+	<outfile>C:\Development\Projects\EncaptureMD\mirth\emd_mirth\branches\3.0.0dev\server\setup\Mirth_Manager.exe</outfile>
+	<icon>C:\Development\Projects\EncaptureMD\mirth\emd_mirth\branches\3.0.0dev\server\setup\public_html\images\mirth_128_ico.ico</icon>
+
+	<errTitle>Mirth_Manager</errTitle>
+	<chdir>.</chdir>
+	<priority>normal</priority>
+	<customProcName>true</customProcName>
+	
+	<jre>
+		<minVersion>1.6.0</minVersion>
+		<initialHeapSize>256</initialHeapSize>
+		<maxHeapSize>512</maxHeapSize>
+		<opt>-Dfile.encoding=UTF8</opt>
+		<opt>-Djava.library.path=manager-lib/</opt>
+	</jre>
+
+	<singleInstance>
+		<mutexName>Mirth_Manager</mutexName>
+	</singleInstance>
+	<versionInfo>
+		<fileVersion>3.0.0.1</fileVersion>
+		<txtFileVersion>Mirth_Manager 3.0.0.1</txtFileVersion>
+		<fileDescription>Mirth_Manager</fileDescription>
+		<copyright>(C) 2013 Flexible Informatics, LLC</copyright>
+		<productVersion>3.0.0.1</productVersion>
+		<txtProductVersion>Mirth_Manager 3.0.0.1</txtProductVersion>
+		<productName>Mirth_Manager</productName>
+		<companyName>Flexible Informatics, LLC</companyName>
+		<internalName>Mirth_Manager</internalName>
+		<originalFilename>Mirth_Manager.exe</originalFilename>
+	</versionInfo>
+</launch4jConfig>

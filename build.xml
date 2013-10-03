@@ -1,0 +1,181 @@
+<project name="Mirth Connect" basedir="." default="package">
+
+    <property file="build.properties" />
+
+    <property name="client.dir" value="${basedir}/client" />
+    <property name="server.dir" value="${basedir}/server" />
+    <property name="exes.dir" value="${basedir}/exes" />
+    <property name="config.dir" value="${basedir}/config" />
+    <property name="installer.dir" value="${basedir}/installer" />
+    <property name="service.dir" value="${basedir}/emd_init" />
+    <property name="dist.dir" value="${basedir}/server/setup" />
+    <property name="base.xml.dir" value="${basedir}/server/src/com/mirth/connect" />
+
+    <taskdef name="launch4j" classname="net.sf.launch4j.ant.Launch4jTask"
+             classpath="${launch4j.dir}/launch4j.jar:${launch4j.dir}/lib/xstream.jar" />
+
+    <!-- load the xmltask task -->
+    <taskdef name="xmltask" classname="com.oopsconsultancy.xmltask.ant.XmlTask">
+        <classpath>
+            <pathelement location="${xmltask.jar}" />
+        </classpath>
+    </taskdef>
+
+    <tstamp>
+        <format property="TIMESTAMP" pattern="MMMMM dd, yyyy" locale="en" />
+    </tstamp>
+
+    <target name="clean">
+        <delete dir="${installer.dir}" />
+        <subant target="clean">
+            <fileset dir="${client.dir}" includes="ant-build.xml"/>
+        </subant>
+        <subant target="clean">
+            <fileset dir="${server.dir}" includes="build.xml"/>
+        </subant>
+    </target>
+
+    <target name="init">
+        <mkdir dir="${installer.dir}" />
+    </target>
+
+    <target name="updateVersion" depends="init">
+        <!--
+        <parallel threadcount="4">
+            <updateXML fileName="${base.xml.dir}/connectors/dimse/destination.xml" property="/connectorMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/connectors/dimse/source.xml" property="/connectorMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/connectors/doc/destination.xml" property="/connectorMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/connectors/file/destination.xml" property="/connectorMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/connectors/file/source.xml" property="/connectorMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/connectors/http/destination.xml" property="/connectorMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/connectors/http/source.xml" property="/connectorMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/connectors/jdbc/destination.xml" property="/connectorMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/connectors/jdbc/source.xml" property="/connectorMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/connectors/jms/destination.xml" property="/connectorMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/connectors/jms/source.xml" property="/connectorMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/connectors/js/destination.xml" property="/connectorMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/connectors/js/source.xml" property="/connectorMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/connectors/smtp/destination.xml" property="/connectorMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/connectors/tcp/destination.xml" property="/connectorMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/connectors/tcp/source.xml" property="/connectorMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/connectors/vm/destination.xml" property="/connectorMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/connectors/vm/source.xml" property="/connectorMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/connectors/ws/destination.xml" property="/connectorMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/connectors/ws/source.xml" property="/connectorMetaData/mirthVersion" />
+
+            <updateXML fileName="${base.xml.dir}/plugins/dashboardstatus/plugin.xml" property="/pluginMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/plugins/datapruner/plugin.xml" property="/pluginMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/plugins/datatypes/delimited/plugin.xml" property="/pluginMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/plugins/datatypes/dicom/plugin.xml" property="/pluginMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/plugins/datatypes/edi/plugin.xml" property="/pluginMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/plugins/datatypes/hl7v2/plugin.xml" property="/pluginMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/plugins/datatypes/hl7v3/plugin.xml" property="/pluginMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/plugins/datatypes/ncpdp/plugin.xml" property="/pluginMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/plugins/datatypes/raw/plugin.xml" property="/pluginMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/plugins/datatypes/xml/plugin.xml" property="/pluginMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/plugins/dicomviewer/plugin.xml" property="/pluginMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/plugins/imageviewer/plugin.xml" property="/pluginMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/plugins/javascriptrule/plugin.xml" property="/pluginMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/plugins/javascriptstep/plugin.xml" property="/pluginMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/plugins/mapper/plugin.xml" property="/pluginMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/plugins/messagebuilder/plugin.xml" property="/pluginMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/plugins/mllpmode/plugin.xml" property="/pluginMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/plugins/pdfviewer/plugin.xml" property="/pluginMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/plugins/rtfviewer/plugin.xml" property="/pluginMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/plugins/rulebuilder/plugin.xml" property="/pluginMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/plugins/scriptfilerule/plugin.xml" property="/pluginMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/plugins/scriptfilestep/plugin.xml" property="/pluginMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/plugins/serverlog/plugin.xml" property="/pluginMetaData/mirthVersion" />
+            <updateXML fileName="${base.xml.dir}/plugins/xsltstep/plugin.xml" property="/pluginMetaData/mirthVersion" />
+        </parallel>
+
+        <propertyfile file="server/build.properties">
+            <entry key="version" value="${version}" />
+        </propertyfile>
+        <propertyfile file="server/version.properties">
+            <entry key="version" value="${version}" />
+            <entry key="mirth.date" value="${TIMESTAMP}" />
+        </propertyfile>
+        <propertyfile file="server/mirth-build.properties">
+            <entry key="version" value="${version}" />
+        </propertyfile>
+        -->
+
+        <xmltask source="${config.dir}/Mirth_Manager.xml" dest="${config.dir}/Mirth_Manager.xml">
+            <replace path="/launch4jConfig/versionInfo/fileVersion/text()" withText="${full.version}" />
+            <replace path="/launch4jConfig/versionInfo/productVersion/text()" withText="${full.version}" />
+            <replace path="/launch4jConfig/versionInfo/txtFileVersion/text()" withText="Mirth_Manager ${full.version}" />
+            <replace path="/launch4jConfig/versionInfo/txtProductVersion/text()" withText="Mirth_Manager ${full.version}" />
+        </xmltask>
+
+        <replaceregexp file="${service.dir}/src/Mirth_Init.cs" match='AssemblyVersion\("[[0-9]\.]+"\)' replace='AssemblyVersion("${full.version}")' />
+        <replaceregexp file="${service.dir}/src/Mirth_Init.cs" match='AssemblyFileVersion\("[[0-9]\.]+"\)' replace='AssemblyFileVersion("${full.version}")' />
+        <replaceregexp file="${config.dir}/Mirth_Connect_installer.iss" match='MyAppVersion \"[[0-9]\.]+"' replace='MyAppVersion "${full.version}"' />
+        <replaceregexp file="${config.dir}/Mirth_Connect_installer.iss" match='MyBinVersion \"[[0-9]\.]+"' replace='MyBinVersion "${full.version}"' />
+
+    </target>
+
+    <target name="build" depends="updateVersion">
+        <subant target="dist">
+            <fileset dir="${server.dir}" includes="mirth-build.xml"/>
+        </subant>
+    </target>
+
+    <target name="buildEXEs" depends="init">
+        <launch4j configFile="${config.dir}/Mirth_Manager.xml" />
+
+        <subant target="build" inheritall="true">
+            <fileset dir="${service.dir}" includes="build.xml"/>
+        </subant>
+    </target>
+
+    <target name="package" depends="build,buildEXEs">
+        <copy file="${service.dir}/config/${csc.output.filename}.config" todir="${dist.dir}" />
+        <copy file="${service.dir}/lib/log4net.dll" todir="${dist.dir}" />
+        <copy file="${config.dir}/mcserver.vmoptions" todir="${dist.dir}" />
+        <copy file="${config.dir}/mcservice.vmoptions" todir="${dist.dir}" />
+        <copy file="${server.dir}/version.properties" todir="${dist.dir}/conf" />
+        <copy todir="${dist.dir}/custom-lib">
+            <fileset dir="custom-lib"/>
+        </copy>
+
+        <copy todir="${dist.dir}">
+            <fileset dir="${config.dir}/wrapper"/>
+        </copy>
+        <copy file="${config.dir}/wrapper/wrapper.dll" todir="${dist.dir}" />
+    </target>
+
+    <target name="installer" depends="package">
+        <exec dir="${basedir}" executable="${compiler.exe}">
+            <arg line="/cc '${config.dir}/${inno.build.file}'" />
+        </exec>
+    </target>
+
+    <target name="signInstaller" depends="installer" description="signs the installer">
+        <exec dir="${basedir}" executable="${signtool.exe}">
+            <arg line="sign" />
+            <arg line="/f" />
+            <arg line="${cert.path}" />
+            <arg line="/p" />
+            <arg line="${cert.pass}" />
+            <arg line="/d" />
+            <arg line="${cert.desc}" />
+            <arg line="/a /t" />
+            <arg line="${timestamp.url}" />
+            <arg line="${installer.dir}\${installer.name}.exe" />
+        </exec>
+    </target>
+
+    <target name="sign" depends="package,installer,signInstaller" description="builds and signs the installer" />
+
+    <macrodef name="updateXML">
+        <attribute name="fileName" />
+        <attribute name="property" />
+        <sequential>
+            <xmltask source="@{fileName}" dest="@{fileName}">
+                <replace path="@{property}/text()" withText="${version}" />
+            </xmltask>
+        </sequential>
+    </macrodef>
+
+</project>

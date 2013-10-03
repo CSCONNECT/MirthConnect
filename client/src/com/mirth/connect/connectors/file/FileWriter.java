@@ -276,7 +276,7 @@ public class FileWriter extends ConnectorSettingsPanel {
         }
 
         FileScheme scheme = props.getScheme();
-        if (scheme.equals(FileScheme.FTP) || scheme.equals(FileScheme.SFTP) || scheme.equals(FileScheme.SMB)) {
+        if (scheme.equals(FileScheme.FTP) || scheme.equals(FileScheme.SFTP) || scheme.equals(FileScheme.SMB) || scheme.equals(FileScheme.FTPS)) {
             if (props.getTimeout().length() == 0) {
                 valid = false;
                 if (highlight) {
@@ -366,8 +366,8 @@ public class FileWriter extends ConnectorSettingsPanel {
 
         schemeLabel.setText("Method:");
 
-        schemeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "file", "ftp", "sftp", "smb", "webdav" }));
-        schemeComboBox.setToolTipText("The basic method used to access files to be written - file (local filesystem), FTP, SFTP, Samba share, or WebDAV.");
+        schemeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "file", "ftp", "sftp", "smb", "webdav", "ftps" }));
+        schemeComboBox.setToolTipText("The basic method used to access files to be written - file (local filesystem), FTP, SFTP, Samba share, WebDAV, or FTPs.");
         schemeComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 schemeComboBoxActionPerformed(evt);
@@ -810,7 +810,7 @@ public class FileWriter extends ConnectorSettingsPanel {
             fileExistsLabel.setEnabled(false);
         }
 
-        if (scheme.equals(FileScheme.FTP)) {
+        if (scheme.equals(FileScheme.FTP) || scheme.equals(FileScheme.FTPS)) {
             anonymousLabel.setEnabled(true);
             anonymousYes.setEnabled(true);
             anonymousNo.setEnabled(true);
@@ -874,6 +874,11 @@ public class FileWriter extends ConnectorSettingsPanel {
             } else {
                 hostLabel.setText("http://");
             }
+        } // else if FTPS is selected
+        else if (text.equals(FileScheme.FTPS.getDisplayName())) {
+
+            onSchemeChange(true, anonymousYes.isSelected(), true, FileScheme.FTPS);
+            hostLabel.setText("ftps://");
         }
     }//GEN-LAST:event_schemeComboBoxActionPerformed
 

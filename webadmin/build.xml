@@ -38,12 +38,12 @@
 	<target name="jspc" depends="init">
 		<taskdef classname="org.apache.jasper.JspC" name="jasper2" classpathref="compile.jspc" />
 		<jasper2 validateXml="false"
-            uriroot="${webadmin}/${build.web}"
+            uriroot="${basedir}/${build.web}"
             addWebXmlMappings="true"
-            webXmlFragment="${webadmin}/${build.web}/WEB-INF/generated_web.xml"
+            webXmlFragment="${basedir}/${build.web}/WEB-INF/generated_web.xml"
             compilerSourceVM="1.6"
             compilerTargetVM="1.6"
-            outputDir="${webadmin}/${build.src}"
+            outputDir="${basedir}/${build.src}"
             verbose="9" />
 	</target>
 

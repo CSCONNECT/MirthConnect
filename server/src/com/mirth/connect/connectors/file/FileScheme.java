@@ -10,7 +10,7 @@
 package com.mirth.connect.connectors.file;
 
 public enum FileScheme {
-    FILE("file"), FTP("ftp"), SFTP("sftp"), SMB("smb"), WEBDAV("webdav");
+    FILE("file"), FTP("ftp"), SFTP("sftp"), SMB("smb"), WEBDAV("webdav"), FTPS("ftps");
 
     private String displayName;
 

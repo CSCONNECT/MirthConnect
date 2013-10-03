@@ -1,0 +1,35 @@
+<project name="EMD Init" basedir="." default="build">
+
+	<property file="../build.properties" />
+
+	<property name="service.dir" value="${basedir}" />
+	<property name="server.dir" value="../server" />
+	<property name="icon.dir" value="${server.dir}/public_html/images" />
+	<property name="dist.dir" value="${server.dir}/setup" />
+
+	<target name="init">
+		<mkdir dir="${dist.dir}" />
+	</target>
+
+	<target name="initializer" depends="init">
+		<exec dir="${service.dir}" executable="${csc.compiler.path}" failonerror="true">
+			<arg line="${csc.platform}" />
+			<arg line="${csc.debug}" />
+			<arg line="${csc.target}" />
+			<arg line="/out:${dist.dir}/${csc.output.filename}" />
+			<arg line="/win32icon:${icon.dir}\mirth_128_ico.ico" />
+			<arg line="/R:${service.dir}\lib\log4net.dll" />
+			<arg line="${service.dir}\src\${main.class}.cs" />
+		</exec>
+
+		<!-- embed manifest for UAC compatibility -->
+		<exec dir="${service.dir}" executable="${mt.sdk.path}" failonerror="true">
+			<arg line="-manifest" />
+			<arg line="${service.dir}\config\${main.class}.manifest" />
+			<arg line="-outputresource:${dist.dir}\${csc.output.filename};#1" />
+		</exec>
+	</target>
+
+	<target name="build" depends="initializer" />
+
+</project>

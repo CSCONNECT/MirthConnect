@@ -82,7 +82,9 @@ public class FileSystemConnectionFactory implements PoolableObjectFactory {
             } else {
                 return webdavScheme + username + ":" + password + "@" + host + ":" + port;
             }
-        } else {
+        } else if (scheme.equals(FileScheme.FTPS)) {
+            return "ftps://" + username + ":" + password + "@" + host + ":" + port;
+        }  else {
             logger.error("getPoolKey doesn't handle scheme " + scheme);
             return "default";
         }
@@ -99,6 +101,8 @@ public class FileSystemConnectionFactory implements PoolableObjectFactory {
             return new SmbFileConnection(host, username, password, timeout);
         } else if (scheme.equals(FileScheme.WEBDAV)) {
             return new WebDavConnection(host, secure, username, password);
+        } else if (scheme.equals(FileScheme.FTPS)) {
+            return new FtpsConnection(host, port, username, password, passive, timeout);
         } else {
             logger.error("makeObject doesn't handle scheme " + scheme);
             throw new IOException("Unimplemented or unrecognized scheme");
