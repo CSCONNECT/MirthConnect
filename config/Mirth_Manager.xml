@@ -27,11 +27,11 @@
 		<fileVersion>3.0.0.1</fileVersion>
 		<txtFileVersion>Mirth_Manager 3.0.0.1</txtFileVersion>
 		<fileDescription>Mirth_Manager</fileDescription>
-		<copyright>(C) 2013 Flexible Informatics, LLC</copyright>
+		<copyright>(C) 2013 Mirth Corporation</copyright>
 		<productVersion>3.0.0.1</productVersion>
 		<txtProductVersion>Mirth_Manager 3.0.0.1</txtProductVersion>
 		<productName>Mirth_Manager</productName>
-		<companyName>Flexible Informatics, LLC</companyName>
+		<companyName>Mirth Corporation</companyName>
 		<internalName>Mirth_Manager</internalName>
 		<originalFilename>Mirth_Manager.exe</originalFilename>
 	</versionInfo>
