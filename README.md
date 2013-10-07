@@ -1,11 +1,11 @@
-<<<<<<< HEAD
-mirth_connect
-=============
+MirthConnect 3.0
+================
 
-Mirth Connect
-=======
-MirthConnect
-============
+Based on the 3.0.0 tag (https://svn.mirthcorp.com/connect/tags/3.0.0)
 
-Custom build that includes a FTPs connector
->>>>>>> ed4d3645b64cd70a99c23545c2bd532bd0190b64
+Custom Windows build that includes an FTPs connector.
+
+Uses Inno Setup (http://www.jrsoftware.org/isinfo.php) and Launch4j (http://launch4j.sourceforge.net/) since we don't have access to Mirth's installer files.  
+
+Also makes use of Java Service Wrapper (http://wrapper.tanukisoftware.com/doc/english/download.jsp) to install Mirth as a Windows service.
+
