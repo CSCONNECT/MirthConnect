@@ -38,7 +38,7 @@ public class FileReaderService implements ConnectorService {
             boolean passive = false;
             int timeout = Integer.parseInt(connectorProperties.getTimeout());
 
-            if (scheme.equals(FileScheme.FTP) || scheme.equals(FileScheme.SFTP)) {
+            if (scheme.equals(FileScheme.FTP) || scheme.equals(FileScheme.SFTP) || scheme.equals(FileScheme.FTPS)) {
                 passive = connectorProperties.isPassive();
             }
 
