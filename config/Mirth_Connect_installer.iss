@@ -43,6 +43,7 @@ VersionInfoCopyright={#MyCopyright}
 ChangesEnvironment=yes
 PrivilegesRequired=admin
 DefaultDirName={pf}\Mirth Connect
+LicenseFile={#MyAppLocation}\server\setup\docs\LICENSE.txt
 
 [Dirs]
 Name: "{app}"; Permissions: everyone-modify;

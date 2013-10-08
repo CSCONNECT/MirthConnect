@@ -152,6 +152,9 @@
     </target>
 
     <target name="signInstaller" depends="installer" description="signs the installer">
+        <!-- Give Inno Setup time to release the EXE -->
+        <sleep seconds="2" />
+        
         <exec dir="${basedir}" executable="${signtool.exe}">
             <arg line="sign" />
             <arg line="/f" />
