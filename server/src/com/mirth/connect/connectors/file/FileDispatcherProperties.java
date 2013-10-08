@@ -262,6 +262,8 @@ public class FileDispatcherProperties extends ConnectorProperties implements Dis
             } else {
                 builder.append("http://");
             }
+        } else if (scheme == FileScheme.FTPS) {
+            builder.append("ftps://");
         }
 
         builder.append(host);

@@ -86,7 +86,7 @@ public class FileDispatcher extends DestinationConnector {
         FileDispatcherProperties fileDispatcherProperties = (FileDispatcherProperties) connectorProperties;
 
         String info = fileDispatcherProperties.getHost() + "/" + fileDispatcherProperties.getOutputPattern();
-        if (fileDispatcherProperties.getScheme().equals(FileScheme.FTP) || fileDispatcherProperties.getScheme().equals(FileScheme.SFTP)) {
+        if (fileDispatcherProperties.getScheme().equals(FileScheme.FTP) || fileDispatcherProperties.getScheme().equals(FileScheme.SFTP) || fileDispatcherProperties.getScheme().equals(FileScheme.FTPS)) {
             if (fileDispatcherProperties.isBinary()) {
                 info += "   File Type: Binary";
             } else {
