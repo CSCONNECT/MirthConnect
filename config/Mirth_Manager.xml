@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<launch4jConfig>
+<?xml version="1.0" encoding="UTF-8"?><launch4jConfig>
 	<dontWrapJar>false</dontWrapJar>
 	<headerType>gui</headerType>
 
-	<jar>C:\Development\Projects\EncaptureMD\mirth\emd_mirth\branches\3.0.0dev\server\setup\mirth-manager-launcher.jar</jar>
-	<outfile>C:\Development\Projects\EncaptureMD\mirth\emd_mirth\branches\3.0.0dev\server\setup\Mirth_Manager.exe</outfile>
-	<icon>C:\Development\Projects\EncaptureMD\mirth\emd_mirth\branches\3.0.0dev\server\setup\public_html\images\mirth_128_ico.ico</icon>
+	<jar>..\server\setup\mirth-manager-launcher.jar</jar>
+	<outfile>..\server\setup\Mirth_Manager.exe</outfile>
+	<icon>..\server\setup\public_html\images\mirth_128_ico.ico</icon>
 
 	<errTitle>Mirth_Manager</errTitle>
 	<chdir>.</chdir>
@@ -24,12 +23,12 @@
 		<mutexName>Mirth_Manager</mutexName>
 	</singleInstance>
 	<versionInfo>
-		<fileVersion>3.0.0.1</fileVersion>
-		<txtFileVersion>Mirth_Manager 3.0.0.1</txtFileVersion>
+		<fileVersion>3.0.0.2</fileVersion>
+		<txtFileVersion>Mirth_Manager 3.0.0.2</txtFileVersion>
 		<fileDescription>Mirth_Manager</fileDescription>
 		<copyright>(C) 2013 Mirth Corporation</copyright>
-		<productVersion>3.0.0.1</productVersion>
-		<txtProductVersion>Mirth_Manager 3.0.0.1</txtProductVersion>
+		<productVersion>3.0.0.2</productVersion>
+		<txtProductVersion>Mirth_Manager 3.0.0.2</txtProductVersion>
 		<productName>Mirth_Manager</productName>
 		<companyName>Mirth Corporation</companyName>
 		<internalName>Mirth_Manager</internalName>

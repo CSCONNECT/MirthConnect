@@ -6,6 +6,11 @@
 	<target name="help">
 		<echo>Mirth Connect Build Help</echo>
 	</target>
+	
+	<target name="print-version"> 
+	   <echo>Java/JVM version: ${ant.java.version}</echo> 
+	   <echo>Java/JVM detail version: ${java.version}</echo> 
+	</target>
 
 	<target name="init">
 		<property file="build.properties" />
@@ -803,12 +808,12 @@
 		<property file="${keystore_property_file}" />
 
 		<parallel>
-			<signjar alias="${key.alias}" keystore="${key.keystore}" storepass="${key.storepass}" keypass="${key.keypass}" storetype="${key.storetype}" tsaurl="https://timestamp.geotrust.com/tsa">
+			<signjar alias="${key.alias}" keystore="${key.keystore}" storepass="${key.storepass}" keypass="${key.keypass}" storetype="${key.storetype}" tsaurl="http://timestamp.comodoca.com">
 				<!-- http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=7127374 -->
 				<sysproperty key="jsse.enableSNIExtension" value="false" />
 				<fileset dir="${setup.client.lib}" includes="**/*.jar" />
 			</signjar>
-			<signjar alias="${key.alias}" keystore="${key.keystore}" storepass="${key.storepass}" keypass="${key.keypass}" storetype="${key.storetype}" tsaurl="https://timestamp.geotrust.com/tsa">
+			<signjar alias="${key.alias}" keystore="${key.keystore}" storepass="${key.storepass}" keypass="${key.keypass}" storetype="${key.storetype}" tsaurl="http://timestamp.comodoca.com">
 				<!-- http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=7127374 -->
 				<sysproperty key="jsse.enableSNIExtension" value="false" />
 				<fileset dir="${setup.extensions}" includes="**/*.jar" />
@@ -866,9 +871,9 @@
 	<target name="create-javadocs" depends="init">
 		<mkdir dir="${docs.javadocs}" />
 		
-		<javadoc sourcepath="${src}" destdir="${docs.javadocs.userapi}" packagenames="com.mirth.connect.server.userutil,com.mirth.connect.userutil">
+		<!--javadoc sourcepath="${src}" destdir="${docs.javadocs.userapi}" packagenames="com.mirth.connect.server.userutil,com.mirth.connect.userutil">
 			<classpath refid="classpath" />
-		</javadoc>
+		</javadoc-->
 	</target>
 
 	<target name="create-derby-db" depends="compile">

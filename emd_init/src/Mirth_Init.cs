@@ -13,8 +13,8 @@ using log4net.Config;
 [assembly: AssemblyCompany("Flexible Informatics, LLC")]
 [assembly: AssemblyProduct("Mirth Service Initializer")]
 [assembly: AssemblyCopyright("Copyright 2013")]
-[assembly: AssemblyVersion("3.0.0.1")]
-[assembly: AssemblyFileVersion("3.0.0.1")]
+[assembly: AssemblyVersion("3.0.0.2")]
+[assembly: AssemblyFileVersion("3.0.0.2")]
 [assembly: log4net.Config.XmlConfigurator(Watch=false)]
 namespace EncaptureMD
 {

@@ -5,9 +5,9 @@
 ;;
 ;;
 ;; Change this to the appropriate version number
-#define MyAppVersion "3.0.0.1"
+#define MyAppVersion "3.0.0.2"
 ;; the version number as seen on right-click of installer exe
-#define MyBinVersion "3.0.0.1"
+#define MyBinVersion "3.0.0.2"
 ;;
 #define MyAppName "Mirth Connect"
 #define MyAppPublisher "Mirth Corporation"
