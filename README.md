@@ -9,3 +9,4 @@ Uses Inno Setup (http://www.jrsoftware.org/isinfo.php) and Launch4j (http://laun
 
 Also makes use of Java Service Wrapper (http://wrapper.tanukisoftware.com/doc/english/download.jsp) to install Mirth as a Windows service.
 
+**Version 3.0 only supports Java 1.7. JSON plugin is not supported in this edition**

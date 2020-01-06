@@ -1,4 +1,4 @@
-<pluginMetaData path="datatype-raw">
+<?xml version="1.0" encoding="UTF-8"?><pluginMetaData path="datatype-raw">
 	<name>Raw Data Type</name>
 	<author>Mirth Corporation</author>
 	<pluginVersion>@mirthversion</pluginVersion>
@@ -11,7 +11,7 @@
 	<clientClasses>
 		<string>com.mirth.connect.plugins.datatypes.raw.RawDataTypeClientPlugin</string>
 	</clientClasses>
-	<library type="CLIENT" path="datatype-raw-client.jar" />
-	<library type="SHARED" path="datatype-raw-shared.jar" />
-	<library type="SERVER" path="datatype-raw-server.jar" />
+	<library path="datatype-raw-client.jar" type="CLIENT"/>
+	<library path="datatype-raw-shared.jar" type="SHARED"/>
+	<library path="datatype-raw-server.jar" type="SERVER"/>
 </pluginMetaData>

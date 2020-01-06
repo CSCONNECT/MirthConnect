@@ -1,4 +1,4 @@
-<pluginMetaData path="datapruner">
+<?xml version="1.0" encoding="UTF-8"?><pluginMetaData path="datapruner">
 	<name>Data Pruner</name>
 	<author>Mirth Corporation</author>
 	<pluginVersion>@mirthversion</pluginVersion>
@@ -11,6 +11,6 @@
 	<clientClasses>
 		<string>com.mirth.connect.plugins.datapruner.DataPrunerClient</string>
 	</clientClasses>
-	<library type="CLIENT" path="datapruner-client.jar" />
-	<library type="SERVER" path="datapruner-server.jar" />
+	<library path="datapruner-client.jar" type="CLIENT"/>
+	<library path="datapruner-server.jar" type="SERVER"/>
 </pluginMetaData>

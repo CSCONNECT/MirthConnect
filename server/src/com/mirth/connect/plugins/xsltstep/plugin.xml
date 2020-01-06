@@ -1,4 +1,4 @@
-<pluginMetaData path="xsltstep">
+<?xml version="1.0" encoding="UTF-8"?><pluginMetaData path="xsltstep">
 	<name>XSLT Transformer Step</name>
 	<author>Mirth Corporation</author>
 	<pluginVersion>@mirthversion</pluginVersion>
@@ -8,5 +8,5 @@
 	<clientClasses>
 		<string>com.mirth.connect.plugins.xsltstep.XsltStepPlugin</string>
 	</clientClasses>
-	<library type="CLIENT" path="xsltstep-client.jar" />
+	<library path="xsltstep-client.jar" type="CLIENT"/>
 </pluginMetaData>

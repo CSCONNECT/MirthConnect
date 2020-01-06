@@ -1,4 +1,4 @@
-<connectorMetaData path="smtp">
+<?xml version="1.0" encoding="UTF-8"?><connectorMetaData path="smtp">
 	<name>SMTP Sender</name>
 	<author>Mirth Corporation</author>
 	<pluginVersion>@mirthversion</pluginVersion>
@@ -9,10 +9,10 @@
 	<serverClassName>com.mirth.connect.connectors.smtp.SmtpDispatcher</serverClassName>
 	<sharedClassName>com.mirth.connect.connectors.smtp.SmtpDispatcherProperties</sharedClassName>
 	<serviceClassName>com.mirth.connect.connectors.smtp.SmtpSenderService</serviceClassName>
-	<library type="CLIENT" path="smtp-client.jar" />
-	<library type="SHARED" path="smtp-shared.jar" />
-	<library type="SERVER" path="smtp-server.jar" />
-	<transformers></transformers>
+	<library path="smtp-client.jar" type="CLIENT"/>
+	<library path="smtp-shared.jar" type="SHARED"/>
+	<library path="smtp-server.jar" type="SERVER"/>
+	<transformers/>
 	<protocol>smtp</protocol>
 	<type>DESTINATION</type>
 </connectorMetaData>

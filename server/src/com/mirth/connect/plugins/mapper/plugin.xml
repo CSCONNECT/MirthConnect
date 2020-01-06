@@ -1,4 +1,4 @@
-<pluginMetaData path="mapper">
+<?xml version="1.0" encoding="UTF-8"?><pluginMetaData path="mapper">
 	<name>Mapper Transformer Step</name>
 	<author>Mirth Corporation</author>
 	<pluginVersion>@mirthversion</pluginVersion>
@@ -8,5 +8,5 @@
 	<clientClasses>
 		<string>com.mirth.connect.plugins.mapper.MapperStepPlugin</string>
 	</clientClasses>
-	<library type="CLIENT" path="mapper-client.jar" />
+	<library path="mapper-client.jar" type="CLIENT"/>
 </pluginMetaData>

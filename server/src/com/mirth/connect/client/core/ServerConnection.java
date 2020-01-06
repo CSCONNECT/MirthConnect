@@ -121,8 +121,8 @@ public final class ServerConnection {
             } else if ((statusCode != HttpStatus.SC_OK) && (statusCode != HttpStatus.SC_MOVED_TEMPORARILY)) {
                 throw new ClientException("method failed: " + post.getStatusLine());
             }
-
-            return IOUtils.toString(post.getResponseBodyAsStream(), post.getResponseCharSet()).trim();
+            String result=IOUtils.toString(post.getResponseBodyAsStream(), post.getResponseCharSet());
+            return result.trim();
         } catch (Exception e) {
             if (post.isAborted()) {
                 throw new ClientException(new RequestAbortedException(e));

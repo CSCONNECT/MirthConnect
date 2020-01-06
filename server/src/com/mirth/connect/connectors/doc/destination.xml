@@ -1,4 +1,4 @@
-<connectorMetaData path="doc">
+<?xml version="1.0" encoding="UTF-8"?><connectorMetaData path="doc">
 	<name>Document Writer</name>
 	<author>Mirth Corporation</author>
 	<pluginVersion>@mirthversion</pluginVersion>
@@ -9,14 +9,14 @@
 	<serverClassName>com.mirth.connect.connectors.doc.DocumentDispatcher</serverClassName>
 	<sharedClassName>com.mirth.connect.connectors.doc.DocumentDispatcherProperties</sharedClassName>
 	<serviceClassName>com.mirth.connect.connectors.doc.DocumentWriterService</serviceClassName>
-	<library type="CLIENT" path="doc-client.jar" />
-	<library type="SHARED" path="doc-shared.jar" />
-	<library type="SERVER" path="doc-server.jar" />
-	<library type="SERVER" path="lib/itext-2.1.7.jar" />
-	<library type="SERVER" path="lib/itext-rtf-2.1.7.jar" />
-	<library type="SERVER" path="lib/flying-saucer-core-9.0.1.jar" />
-	<library type="SERVER" path="lib/flying-saucer-pdf-9.0.1.jar" />
-	<transformers></transformers>
+	<library path="doc-client.jar" type="CLIENT"/>
+	<library path="doc-shared.jar" type="SHARED"/>
+	<library path="doc-server.jar" type="SERVER"/>
+	<library path="lib/itext-2.1.7.jar" type="SERVER"/>
+	<library path="lib/itext-rtf-2.1.7.jar" type="SERVER"/>
+	<library path="lib/flying-saucer-core-9.0.1.jar" type="SERVER"/>
+	<library path="lib/flying-saucer-pdf-9.0.1.jar" type="SERVER"/>
+	<transformers/>
 	<protocol>doc</protocol>
 	<type>DESTINATION</type>
 </connectorMetaData>

@@ -1,4 +1,4 @@
-<connectorMetaData path="ws">
+<?xml version="1.0" encoding="UTF-8"?><connectorMetaData path="ws">
 	<name>Web Service Sender</name>
 	<author>Mirth Corporation</author>
 	<pluginVersion>@mirthversion</pluginVersion>
@@ -9,15 +9,15 @@
 	<serverClassName>com.mirth.connect.connectors.ws.WebServiceDispatcher</serverClassName>
 	<sharedClassName>com.mirth.connect.connectors.ws.WebServiceDispatcherProperties</sharedClassName>
 	<serviceClassName>com.mirth.connect.connectors.ws.WebServiceConnectorService</serviceClassName>
-	<transformers></transformers>
+	<transformers/>
 	<protocol>ws</protocol>
 	<type>DESTINATION</type>
-	<library type="SERVER" path="ws-server.jar" />
-	<library type="CLIENT" path="ws-client.jar" />
-	<library type="SHARED" path="ws-shared.jar" />
-	<library type="SERVER" path="lib/soapui-4.0.1.jar" />
-	<library type="SERVER" path="lib/wsdl4j-1.6.2-fixed.jar" />
-	<library type="SERVER" path="lib/xbean-fixed-2.4.0.jar" />
-	<library type="SERVER" path="lib/soapui-xmlbeans-4.0.1.jar" />
-	<library type="SERVER" path="lib/policy-xmlbeans-1.5.jar" />
+	<library path="ws-server.jar" type="SERVER"/>
+	<library path="ws-client.jar" type="CLIENT"/>
+	<library path="ws-shared.jar" type="SHARED"/>
+	<library path="lib/soapui-4.0.1.jar" type="SERVER"/>
+	<library path="lib/wsdl4j-1.6.2-fixed.jar" type="SERVER"/>
+	<library path="lib/xbean-fixed-2.4.0.jar" type="SERVER"/>
+	<library path="lib/soapui-xmlbeans-4.0.1.jar" type="SERVER"/>
+	<library path="lib/policy-xmlbeans-1.5.jar" type="SERVER"/>
 </connectorMetaData>

@@ -1,4 +1,4 @@
-<connectorMetaData path="http">
+<?xml version="1.0" encoding="UTF-8"?><connectorMetaData path="http">
 	<name>HTTP Listener</name>
 	<author>Mirth Corporation</author>
 	<pluginVersion>@mirthversion</pluginVersion>
@@ -8,10 +8,10 @@
 	<clientClassName>com.mirth.connect.connectors.http.HttpListener</clientClassName>
 	<serverClassName>com.mirth.connect.connectors.http.HttpReceiver</serverClassName>
 	<sharedClassName>com.mirth.connect.connectors.http.HttpReceiverProperties</sharedClassName>
-	<library type="CLIENT" path="http-client.jar" />
-	<library type="SHARED" path="http-shared.jar" />
-	<library type="SERVER" path="http-server.jar" />
-	<transformers></transformers>
+	<library path="http-client.jar" type="CLIENT"/>
+	<library path="http-shared.jar" type="SHARED"/>
+	<library path="http-server.jar" type="SERVER"/>
+	<transformers/>
 	<protocol>http</protocol>
 	<type>SOURCE</type>
 </connectorMetaData>

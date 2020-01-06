@@ -1,4 +1,4 @@
-<pluginMetaData path="dicomviewer">
+<?xml version="1.0" encoding="UTF-8"?><pluginMetaData path="dicomviewer">
 	<name>DICOM Viewer</name>
 	<author>Mirth Corporation</author>
 	<pluginVersion>@mirthversion</pluginVersion>
@@ -8,6 +8,6 @@
 	<clientClasses>
 		<string>com.mirth.connect.plugins.dicomviewer.DICOMViewer</string>
 	</clientClasses>
-	<library type="CLIENT" path="dicomviewer-client.jar" />
-	<library type="SHARED" path="lib/ij.jar" />
+	<library path="dicomviewer-client.jar" type="CLIENT"/>
+	<library path="lib/ij.jar" type="SHARED"/>
 </pluginMetaData>

@@ -1,4 +1,4 @@
-<pluginMetaData path="datatype-delimited">
+<?xml version="1.0" encoding="UTF-8"?><pluginMetaData path="datatype-delimited">
 	<name>Delimited Data Type</name>
 	<author>Mirth Corporation</author>
 	<pluginVersion>@mirthversion</pluginVersion>
@@ -11,7 +11,7 @@
 	<clientClasses>
 		<string>com.mirth.connect.plugins.datatypes.delimited.DelimitedDataTypeClientPlugin</string>
 	</clientClasses>
-	<library type="CLIENT" path="datatype-delimited-client.jar" />
-	<library type="SHARED" path="datatype-delimited-shared.jar" />
-	<library type="SERVER" path="datatype-delimited-server.jar" />
+	<library path="datatype-delimited-client.jar" type="CLIENT"/>
+	<library path="datatype-delimited-shared.jar" type="SHARED"/>
+	<library path="datatype-delimited-server.jar" type="SERVER"/>
 </pluginMetaData>

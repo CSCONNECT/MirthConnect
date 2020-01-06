@@ -1,4 +1,4 @@
-<pluginMetaData path="scriptfilestep">
+<?xml version="1.0" encoding="UTF-8"?><pluginMetaData path="scriptfilestep">
 	<name>External Script Transformer Step</name>
 	<author>Mirth Corporation</author>
 	<pluginVersion>@mirthversion</pluginVersion>
@@ -8,5 +8,5 @@
 	<clientClasses>
 		<string>com.mirth.connect.plugins.scriptfilestep.ExternalScriptStepPlugin</string>
 	</clientClasses>
-	<library type="CLIENT" path="scriptfilestep-client.jar" />
+	<library path="scriptfilestep-client.jar" type="CLIENT"/>
 </pluginMetaData>

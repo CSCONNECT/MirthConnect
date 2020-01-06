@@ -1,4 +1,4 @@
-<connectorMetaData path="ws">
+<?xml version="1.0" encoding="UTF-8"?><connectorMetaData path="ws">
 	<name>Web Service Listener</name>
 	<author>Mirth Corporation</author>
 	<pluginVersion>@mirthversion</pluginVersion>
@@ -9,10 +9,10 @@
 	<sharedClassName>com.mirth.connect.connectors.ws.WebServiceReceiverProperties</sharedClassName>
 	<serverClassName>com.mirth.connect.connectors.ws.WebServiceReceiver</serverClassName>
 	<serviceClassName>com.mirth.connect.connectors.ws.WebServiceConnectorService</serviceClassName>
-	<transformers></transformers>
+	<transformers/>
 	<protocol>ws</protocol>
 	<type>SOURCE</type>
-	<library type="SERVER" path="ws-server.jar" />
-	<library type="CLIENT" path="ws-client.jar" />
-	<library type="SHARED" path="ws-shared.jar" />
+	<library path="ws-server.jar" type="SERVER"/>
+	<library path="ws-client.jar" type="CLIENT"/>
+	<library path="ws-shared.jar" type="SHARED"/>
 </connectorMetaData>

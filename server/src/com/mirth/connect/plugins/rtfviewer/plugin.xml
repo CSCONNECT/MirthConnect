@@ -1,4 +1,4 @@
-<pluginMetaData path="rtfviewer">
+<?xml version="1.0" encoding="UTF-8"?><pluginMetaData path="rtfviewer">
 	<name>RTF Viewer</name>
 	<author>Mirth Corporation</author>
 	<pluginVersion>@mirthversion</pluginVersion>
@@ -8,5 +8,5 @@
 	<clientClasses>
 		<string>com.mirth.connect.plugins.rtfviewer.RTFViewer</string>
 	</clientClasses>
-	<library type="CLIENT" path="rtfviewer-client.jar" />
+	<library path="rtfviewer-client.jar" type="CLIENT"/>
 </pluginMetaData>

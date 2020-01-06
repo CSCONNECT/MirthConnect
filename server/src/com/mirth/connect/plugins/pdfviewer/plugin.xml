@@ -1,4 +1,4 @@
-<pluginMetaData path="pdfviewer">
+<?xml version="1.0" encoding="UTF-8"?><pluginMetaData path="pdfviewer">
 	<name>PDF Viewer</name>
 	<author>Mirth Corporation</author>
 	<pluginVersion>@mirthversion</pluginVersion>
@@ -8,6 +8,6 @@
 	<clientClasses>
 		<string>com.mirth.connect.plugins.pdfviewer.PDFViewer</string>
 	</clientClasses>
-	<library type="CLIENT" path="pdfviewer-client.jar" />
-	<library type="CLIENT" path="lib/PDFRenderer.jar" />
+	<library path="pdfviewer-client.jar" type="CLIENT"/>
+	<library path="lib/PDFRenderer.jar" type="CLIENT"/>
 </pluginMetaData>

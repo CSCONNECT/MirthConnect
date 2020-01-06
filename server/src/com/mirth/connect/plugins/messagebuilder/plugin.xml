@@ -1,4 +1,4 @@
-<pluginMetaData path="messagebuilder">
+<?xml version="1.0" encoding="UTF-8"?><pluginMetaData path="messagebuilder">
 	<name>Message Builder Transformer Step</name>
 	<author>Mirth Corporation</author>
 	<pluginVersion>@mirthversion</pluginVersion>
@@ -8,5 +8,5 @@
 	<clientClasses>
 		<string>com.mirth.connect.plugins.messagebuilder.MessageBuilderPlugin</string>
 	</clientClasses>
-	<library type="CLIENT" path="messagebuilder-client.jar" />
+	<library path="messagebuilder-client.jar" type="CLIENT"/>
 </pluginMetaData>

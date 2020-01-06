@@ -1,4 +1,4 @@
-<pluginMetaData path="datatype-dicom">
+<?xml version="1.0" encoding="UTF-8"?><pluginMetaData path="datatype-dicom">
 	<name>DICOM Data Type</name>
 	<author>Mirth Corporation</author>
 	<pluginVersion>@mirthversion</pluginVersion>
@@ -11,7 +11,7 @@
 	<clientClasses>
 		<string>com.mirth.connect.plugins.datatypes.dicom.DICOMDataTypeClientPlugin</string>
 	</clientClasses>
-	<library type="CLIENT" path="datatype-dicom-client.jar" />
-	<library type="SHARED" path="datatype-dicom-shared.jar" />
-	<library type="SERVER" path="datatype-dicom-server.jar" />
+	<library path="datatype-dicom-client.jar" type="CLIENT"/>
+	<library path="datatype-dicom-shared.jar" type="SHARED"/>
+	<library path="datatype-dicom-server.jar" type="SERVER"/>
 </pluginMetaData>

@@ -1,4 +1,4 @@
-<pluginMetaData path="javascriptrule">
+<?xml version="1.0" encoding="UTF-8"?><pluginMetaData path="javascriptrule">
 	<name>Javascript Filter Rule</name>
 	<author>Mirth Corporation</author>
 	<pluginVersion>@mirthversion</pluginVersion>
@@ -8,5 +8,5 @@
 	<clientClasses>
 		<string>com.mirth.connect.plugins.javascriptrule.JavascriptRulePlugin</string>
 	</clientClasses>
-	<library type="CLIENT" path="javascriptrule-client.jar" />
+	<library path="javascriptrule-client.jar" type="CLIENT"/>
 </pluginMetaData>

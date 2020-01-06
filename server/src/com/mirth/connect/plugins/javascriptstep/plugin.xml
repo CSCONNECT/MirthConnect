@@ -1,4 +1,4 @@
-<pluginMetaData path="javascriptstep">
+<?xml version="1.0" encoding="UTF-8"?><pluginMetaData path="javascriptstep">
 	<name>Javascript Transformer Step</name>
 	<author>Mirth Corporation</author>
 	<pluginVersion>@mirthversion</pluginVersion>
@@ -8,5 +8,5 @@
 	<clientClasses>
 		<string>com.mirth.connect.plugins.javascriptstep.JavascriptStepPlugin</string>
 	</clientClasses>
-	<library type="CLIENT" path="javascriptstep-client.jar" />
+	<library path="javascriptstep-client.jar" type="CLIENT"/>
 </pluginMetaData>

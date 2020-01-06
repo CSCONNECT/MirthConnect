@@ -1,4 +1,4 @@
-<pluginMetaData path="datatype-edi">
+<?xml version="1.0" encoding="UTF-8"?><pluginMetaData path="datatype-edi">
 	<name>EDI Data Type</name>
 	<author>Mirth Corporation</author>
 	<pluginVersion>@mirthversion</pluginVersion>
@@ -11,7 +11,7 @@
 	<clientClasses>
 		<string>com.mirth.connect.plugins.datatypes.edi.EDIDataTypeClientPlugin</string>
 	</clientClasses>
-	<library type="CLIENT" path="datatype-edi-client.jar" />
-	<library type="SHARED" path="datatype-edi-shared.jar" />
-	<library type="SERVER" path="datatype-edi-server.jar" />
+	<library path="datatype-edi-client.jar" type="CLIENT"/>
+	<library path="datatype-edi-shared.jar" type="SHARED"/>
+	<library path="datatype-edi-server.jar" type="SERVER"/>
 </pluginMetaData>

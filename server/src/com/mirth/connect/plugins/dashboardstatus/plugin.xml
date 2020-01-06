@@ -1,4 +1,4 @@
-<pluginMetaData path="dashboardstatus">
+<?xml version="1.0" encoding="UTF-8"?><pluginMetaData path="dashboardstatus">
 	<name>Dashboard Connector Status Monitor</name>
 	<author>Mirth Corporation</author>
 	<pluginVersion>@mirthversion</pluginVersion>
@@ -12,5 +12,5 @@
 		<string>com.mirth.connect.plugins.dashboardstatus.DashboardConnectorStatusColumn</string>
 		<string>com.mirth.connect.plugins.dashboardstatus.DashboardConnectorStatusClient</string>
 	</clientClasses>
-	<library type="SERVER" path="dashboardstatus-server.jar" />
+	<library path="dashboardstatus-server.jar" type="SERVER"/>
 </pluginMetaData>

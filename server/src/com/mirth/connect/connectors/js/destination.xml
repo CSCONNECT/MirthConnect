@@ -1,4 +1,4 @@
-<connectorMetaData path="js">
+<?xml version="1.0" encoding="UTF-8"?><connectorMetaData path="js">
 	<name>JavaScript Writer</name>
 	<author>Mirth Corporation</author>
 	<pluginVersion>@mirthversion</pluginVersion>
@@ -8,10 +8,10 @@
 	<clientClassName>com.mirth.connect.connectors.js.JavaScriptWriter</clientClassName>
 	<serverClassName>com.mirth.connect.connectors.js.JavaScriptDispatcher</serverClassName>
 	<sharedClassName>com.mirth.connect.connectors.js.JavaScriptDispatcherProperties</sharedClassName>
-	<library type="CLIENT" path="js-client.jar" />
-	<library type="SHARED" path="js-shared.jar" />
-	<library type="SERVER" path="js-server.jar" />
-	<transformers></transformers>
+	<library path="js-client.jar" type="CLIENT"/>
+	<library path="js-shared.jar" type="SHARED"/>
+	<library path="js-server.jar" type="SERVER"/>
+	<transformers/>
 	<protocol>js</protocol>
 	<type>DESTINATION</type>
 </connectorMetaData>

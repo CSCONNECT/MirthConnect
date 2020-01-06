@@ -1,4 +1,4 @@
-<pluginMetaData path="rulebuilder">
+<?xml version="1.0" encoding="UTF-8"?><pluginMetaData path="rulebuilder">
 	<name>Rule Builder Filter Rule</name>
 	<author>Mirth Corporation</author>
 	<pluginVersion>@mirthversion</pluginVersion>
@@ -8,5 +8,5 @@
 	<clientClasses>
 		<string>com.mirth.connect.plugins.rulebuilder.RuleBuilderPlugin</string>
 	</clientClasses>
-	<library type="CLIENT" path="rulebuilder-client.jar" />
+	<library path="rulebuilder-client.jar" type="CLIENT"/>
 </pluginMetaData>

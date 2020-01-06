@@ -40,7 +40,7 @@
     </target>
 
     <target name="updateVersion" depends="init">
-        <!--
+       
         <parallel threadcount="4">
             <updateXML fileName="${base.xml.dir}/connectors/dimse/destination.xml" property="/connectorMetaData/mirthVersion" />
             <updateXML fileName="${base.xml.dir}/connectors/dimse/source.xml" property="/connectorMetaData/mirthVersion" />
@@ -99,7 +99,7 @@
         <propertyfile file="server/mirth-build.properties">
             <entry key="version" value="${version}" />
         </propertyfile>
-        -->
+        
 
         <xmltask source="${config.dir}/Mirth_Manager.xml" dest="${config.dir}/Mirth_Manager.xml">
             <replace path="/launch4jConfig/versionInfo/fileVersion/text()" withText="${full.version}" />

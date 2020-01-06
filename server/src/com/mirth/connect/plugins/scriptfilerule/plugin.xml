@@ -1,4 +1,4 @@
-<pluginMetaData path="scriptfilerule">
+<?xml version="1.0" encoding="UTF-8"?><pluginMetaData path="scriptfilerule">
 	<name>External Script Filter Step</name>
 	<author>Mirth Corporation</author>
 	<pluginVersion>@mirthversion</pluginVersion>
@@ -8,5 +8,5 @@
 	<clientClasses>
 		<string>com.mirth.connect.plugins.scriptfilerule.ExternalScriptRulePlugin</string>
 	</clientClasses>
-	<library type="CLIENT" path="scriptfilerule-client.jar" />
+	<library path="scriptfilerule-client.jar" type="CLIENT"/>
 </pluginMetaData>
