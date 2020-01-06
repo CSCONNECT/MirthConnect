@@ -1,4 +1,4 @@
-MirthConnect 3.0
+MirthConnect 3.00.CS
 ================
 
 Based on the 3.0.0 tag (https://svn.mirthcorp.com/connect/tags/3.0.0)
@@ -9,4 +9,4 @@ Uses Inno Setup (http://www.jrsoftware.org/isinfo.php) and Launch4j (http://laun
 
 Also makes use of Java Service Wrapper (http://wrapper.tanukisoftware.com/doc/english/download.jsp) to install Mirth as a Windows service.
 
-**Version 3.0 only supports Java 1.7. JSON plugin is not supported in this edition**
+In this custom build Java 1.8 compatibility issue is solved (XStream serialization problem).
