@@ -84,7 +84,7 @@ public class MessageExportDialog extends JDialog {
     public void setBackground(Color color) {
         super.setBackground(color);
         getContentPane().setBackground(color);
-        messageExportPanel.setBackground(color);
+       // this.setBackground(color);
     }
 
     private void initComponents() {
